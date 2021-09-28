@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/searchCityEtLayout"
+                style="@style/CustomTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:endIconCheckable="true"
+                app:endIconDrawable="@drawable/ic_baseline_done_24"
+                app:endIconMode="custom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/searchCityEt"
+                    style="NikeTextInputEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/searchBtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="end"
+                android:layout_margin="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_search_35dp"
+                android:visibility="visible" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/cityNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/roboto_black"
+                    android:textColor="@color/black"
+                    android:textSize="26sp"
+                    tools:text="london" />
+
+                <TextView
+                    android:id="@+id/countryNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/gray_500"
+                    android:textSize="22sp"
+                    tools:text="united kingdom" />
+            </LinearLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                app:cardCornerRadius="9dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_blue_light">
+
+                    <ImageView
+                        android:id="@+id/weatherIv"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:srcCompat="@drawable/heavy_rain" />
+
+                    <TextView
+                        android:id="@+id/descriptionTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_black"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        app:layout_constraintEnd_toEndOf="@+id/weatherIv"
+                        app:layout_constraintStart_toStartOf="@+id/weatherIv"
+                        app:layout_constraintTop_toBottomOf="@+id/weatherIv"
+                        tools:text="Heavy Rain" />
+
+                    <TextView
+                        android:id="@+id/dateTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="@+id/descriptionTv"
+                        app:layout_constraintStart_toStartOf="@+id/descriptionTv"
+                        app:layout_constraintTop_toBottomOf="@+id/descriptionTv"
+                        tools:text="Sunday 02 October" />
+
+                    <TextView
+                        android:id="@+id/temperatureDegreeTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/roboto_black"
+                        android:textColor="@color/white"
+                        android:textSize="35sp"
+                        app:layout_constraintEnd_toEndOf="@+id/dateTv"
+                        app:layout_constraintStart_toStartOf="@+id/dateTv"
+                        app:layout_constraintTop_toBottomOf="@+id/dateTv"
+                        tools:text="24°c" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/temperatureDegreeTv" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/view2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        app:layout_constraintBottom_toTopOf="@+id/view3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view"
+                        android:src="@drawable/menu_wind" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/wind"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@+id/imageView2"
+                        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                    <TextView
+                        android:id="@+id/windTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toEndOf="@+id/textView4"
+                        app:layout_constraintStart_toStartOf="@+id/textView4"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4"
+                        tools:text="19.2" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toTopOf="@+id/view3"
+                        app:layout_constraintStart_toStartOf="@+id/view2"
+                        app:layout_constraintTop_toTopOf="@+id/view2"
+                        android:src="@drawable/menu_temperature" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/feelsLike"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@+id/imageView3"
+                        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+                    <TextView
+                        android:id="@+id/feelsLikeTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                        app:layout_constraintEnd_toEndOf="@+id/textView6"
+                        app:layout_constraintStart_toStartOf="@+id/textView6"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6"
+                        tools:text="25°c" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view3"
+                        android:src="@drawable/ic_cloud_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/cloudiness"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@+id/imageView4"
+                        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+                    <TextView
+                        android:id="@+id/cloudinessTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        tools:text="90%"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                        app:layout_constraintEnd_toEndOf="@+id/textView8"
+                        app:layout_constraintStart_toStartOf="@+id/textView8"
+                        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/view2"
+                        app:layout_constraintTop_toBottomOf="@+id/view3"
+                        android:src="@drawable/menu_humidity" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/humidity"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@+id/imageView5"
+                        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+                    <TextView
+                        android:id="@+id/humidityTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        tools:text="1023"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="@+id/textView10"
+                        app:layout_constraintStart_toStartOf="@+id/textView10"
+                        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:gravity="start">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/today"
+                    android:layout_marginStart="12dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_black"/>
+
+                <TextView
+                    android:id="@+id/nextDaysWeatherTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:text="@string/nextDays"
+                    android:background="?selectableItemBackground"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_arrow_right_24"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/weatherForecastRv"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="8dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

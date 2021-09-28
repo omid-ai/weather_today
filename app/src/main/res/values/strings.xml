@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Weather Today</string>
+    <string name="today">today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="nextDays">Next 7 days</string>
+    <string name="city">city name</string>
+    <string name="search">Search</string>
+    <string name="cancel">Cancel</string>
+    <string name="notNull">Cannot be empty!</string>
+    <string name="wind">wind(km/h)</string>
+    <string name="feelsLike">Feels Like</string>
+    <string name="cloudiness">cloudiness</string>
+    <string name="pressure">pressure(mbar)</string>
+    <string name="humidity">Humidity</string>
+</resources>
